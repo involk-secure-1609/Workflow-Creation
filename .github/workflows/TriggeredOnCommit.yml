@@ -1,0 +1,17 @@
+name: Commit-Triggered
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Display a message
+        run: echo "This action is triggered by commit"
