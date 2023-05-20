@@ -1,4 +1,4 @@
-name: Pull Request Merge Video Link
+name: Open YouTube Link
 
 on:
   pull_request:
@@ -6,13 +6,14 @@ on:
       - closed
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  open_link:
+    runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Open YouTube Link
+        uses: actions/checkout@v3
         
-    - name: Display video link
-      if: github.event.pull_request.merged == true
-      run: echo " Please watch this video: https://www.youtube.com/watch?v=xvFZjo5PgG0"
+      - name: Open YouTube link 
+        if: github.event.pull_request.merged == true
+        run: |
+          xdg-open "https://www.youtube.com/watch?v=xvFZjo5PgG0"
