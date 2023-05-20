@@ -1,0 +1,17 @@
+name:Emoji-generation.
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Display emoji
+        run: echo ":wink: U have generated a pull request :wink: "
